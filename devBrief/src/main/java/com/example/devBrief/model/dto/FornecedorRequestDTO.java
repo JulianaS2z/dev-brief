@@ -1,5 +1,6 @@
 package com.example.devBrief.model.dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -18,9 +19,10 @@ public class FornecedorRequestDTO {
 
     @NotBlank(message = "O e-mail é obrigatório.")
     @Size(max = 100, message = "O e-mail deve ter no máximo 100 caracteres.")
+    @Email(message = "Por favor, insira um e-mail válido contendo '@'.") // <- Adicione esta linha aqui
     private String email;
 
     @NotBlank(message = "O telefone é obrigatório.")
-    @Size(min = 11, max= 21, message = "O telefone deve ter entre 11 e 21 caracteres.")
+    @Size(min = 11, max = 21, message = "O telefone deve ter entre 11 e 21 caracteres.")
     private String telefone;
 }
